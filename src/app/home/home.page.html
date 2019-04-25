@@ -1,14 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <body>
+      <div class="ion-padding" class="container">
+          <h1 class="heading" >Star Wars <br>Encyclopedia</h1>
+          <br>
+          Search Here:
+          <br>
+          <!-- The Search Box -->
+          <ion-searchbar mode="md" placeholder="Luke Skywalker" [(ngModel)]="searchValue"></ion-searchbar>
+          <br>
+          Choose a Search Type:
+          <br>
+          <!-- The Drop down menu - and the selectable items in it -->
+          <ion-item class="dropDown">
+            <ion-label>Type:</ion-label>
+              <ion-select [(ngModel)]="searchType">
+                  <ion-select-option value="films">Films</ion-select-option>
+                  <ion-select-option value="people">People</ion-select-option>
+                  <ion-select-option value="planets">Planets</ion-select-option>
+                  <ion-select-option value="species">Species</ion-select-option>
+                  <ion-select-option value="starships">Starships</ion-select-option>
+                  <ion-select-option value="vehicles">Vehicles</ion-select-option>              
+                </ion-select>
+          </ion-item>       
+          <br>
+          <!-- The Button calls a function when clicked, and sends data to the Results page (of which its navigating to) -->
+          <ion-button (click)="navResultsPage()">Search!</ion-button> 
+          <br><br>    
+      </div>  
+  </body>
 </ion-content>
+
+

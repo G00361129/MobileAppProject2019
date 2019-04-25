@@ -1,0 +1,83 @@
+<ion-content >   
+  <body scrollY="true" class="scrollable">
+    <div class="container">
+      <h1>Results Page</h1>
+
+      <div  class="resultsFont">
+      You Searched for:<br><div class="textResults">{{searchValue}}</div> in <div class="textResults">{{searchType}}</div>
+
+      <!-- Creating a for loop which runs through the JSON file produced by the API-->
+      <ul *ngFor="let r of results">
+        <!-- Checks if the searchtype from the home page is equal to the value, and displays the list element if true -->
+        <li *ngIf = "this.searchType === 'films'" > 
+          Title:<br><div class="textResults">{{r.title}}</div><br><br>
+          Episode ID:<br><div class="textResults">{{r.episode_id}}</div><br><br>
+          Director:<br><div class="textResults">{{r.director}}</div><br><br>
+          Producers:<br><div class="textResults">{{r.producer}}</div><br><br>       
+          Release Date:<br><div class="textResults">{{r.release_date}}</div><br><br>
+          Opening Crawl:<br><div class="textResults">{{r.opening_crawl}}</div><br><br>
+        </li>
+
+        <li *ngIf = "this.searchType === 'people'">       
+          Name:<br><div class="textResults">{{r.name}}</div><br><br>
+          Height:<br><div class="textResults">{{r.height}}</div><br><br>
+          Hair Colour:<br><div class="textResults">{{r.hair_color}}</div><br><br>
+          Skin Colour:<br><div class="textResults">{{r.skin_color}}</div><br><br>
+          Eye Colour:<br><div class="textResults">{{r.eye_color}}</div><br><br>
+          Birth Year:<br><div class="textResults">{{r.birth_year}}</div><br><br>
+          Gender:<br><div class="textResults">{{r.gender}}</div><br><br>
+        </li>
+
+        <li *ngIf = "this.searchType === 'planets'" >  
+          Name:<br><div class="textResults">{{r.name}}</div><br><br>
+          Population:<br><div class="textResults">{{r.population}}</div><br><br>
+          Terrain:<br><div class="textResults">{{r.terrain}}</div><br><br>
+          Climate:<br><div class="textResults">{{r.climate}}</div><br><br>
+          Diameter:<br><div class="textResults">{{r.diameter}} km</div><br><br>
+          Rotation Period:<br><div class="textResults">{{r.rotation_period}}</div><br><br>
+          Orbital Period:<br><div class="textResults">{{r.orbital_period}}</div><br><br>
+        </li> 
+
+        <li *ngIf = "this.searchType === 'species'">       
+          Name:<br><div class="textResults">{{r.name}}</div><br><br>
+          Classification:<br><div class="textResults">{{r.classification}}</div><br><br>
+          Designation:<br><div class="textResults">{{r.designation}}</div><br><br>
+          Language:<br><div class="textResults">{{r.language}}</div><br><br>            
+          Average Height:<br><div class="textResults">{{r.average_height}} cm</div><br><br>
+          Hair Colours:<br><div class="textResults">{{r.hair_colors}}</div><br><br>
+          Skin Colours:<br><div class="textResults">{{r.skin_colors}}</div><br><br>
+          Eye Colours:<br><div class="textResults">{{r.eye_colors}}</div><br><br>
+          Average Lifespan:<br><div class="textResults">{{r.average_lifespan}} years</div><br><br>
+          </li>
+
+        <li *ngIf = "this.searchType === 'starships'"> 
+          Name:<br><div class="textResults">{{r.name}}</div><br><br>
+          Model:<br><div class="textResults">{{r.model}}</div><br><br>
+          Starship Type:<br><div class="textResults">{{r.starship_class}}</div><br><br>
+          Manufacturer:<br><div class="textResults">{{r.manufacturer}}</div><br><br>
+          Hyperdrive Rating:<br><div class="textResults">{{r.hyperdrive_rating}}</div><br><br>
+          Cost:<br><div class="textResults">{{r.cost_in_credits}} Galactic Credits</div><br><br>
+          Length:<br><div class="textResults">{{r.length}} m</div><br><br>
+          Crew Required:<br><div class="textResults">{{r.crew}}</div><br><br>
+          Max Passengers:<br><div class="textResults">{{r.passengers}}</div><br><br>
+        </li>
+
+        <li *ngIf = "this.searchType === 'vehicles'"> 
+          Name:<br><div class="textResults">{{r.name}}</div><br><br>
+          Model:<br><div class="textResults">{{r.model}}</div><br><br>
+          Vehicle Type:<br><div class="textResults">{{r.vehicle_class}}</div><br><br>
+          Manufacturer:<br><div class="textResults">{{r.manufacturer}}</div><br><br>
+          Cost:<br><div class="textResults">{{r.cost_in_credits}} Galactic Credits</div><br><br>
+          Length:<br><div class="textResults">{{r.length}} m</div><br><br>
+          Crew Required:<br><div class="textResults">{{r.crew}}</div><br><br>
+          Max Passengers:<br><div class="textResults">{{r.passengers}}</div><br><br>
+        </li>
+      </ul>
+      </div>
+      <!-- Uses the ionic 4 router to navigate back to the Homepage -->
+      <ion-button routerLink="/home" routerDirection="back">Go Back</ion-button>
+      <br><br>
+    </div>
+  </body>    
+</ion-content>
+
